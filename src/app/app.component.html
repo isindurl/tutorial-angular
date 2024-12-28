@@ -1,0 +1,333 @@
+<nav>
+  <ul>
+    <li><a (click)="setSection('inicio')">Inicio</a></li>
+    <li><a (click)="setSection('justificacion')">Justificación</a></li>
+    <li><a (click)="setSection('instalacion')">Instalación</a></li>
+    <li><a (click)="setSection('primeros-pasos')">Primeros Pasos</a></li>
+    <li><a (click)="setSection('utilizacion')">Utilización</a></li>
+    <li><a (click)="setSection('explicacion')">Explicación</a></li>
+    <li><a (click)="setSection('conclusiones')">Conclusiones</a></li>
+  </ul>
+</nav>
+
+<div class="content">
+  <ng-container [ngSwitch]="currentSection">
+    <div *ngSwitchCase="'inicio'">
+      <div class="inicio">
+        <img src="https://angular.io/assets/images/logos/angular/angular.png" alt="Angular Logo" class="logo">
+        <h1>Bienvenido al Tutorial de Angular</h1>
+        <p>Este tutorial incluye las siguientes secciones:</p>
+        <ul>
+          <li>Justificación del Framework</li>
+          <li>Instalación</li>
+          <li>Primeros Pasos</li>
+          <li>Utilización del Framework</li>
+          <li>Explicación del Funcionamiento</li>
+          <li>Conclusiones</li>
+        </ul>
+      </div>
+    </div>
+    <div *ngSwitchCase="'justificacion'">
+      <h2 class="title">Introducción a Angular</h2>
+  
+      <h3 class="subtitle">¿Para qué sirve?</h3>
+      <p class="description">
+        Angular es un framework de desarrollo frontend que permite crear aplicaciones web dinámicas, modernas y escalables. 
+        Está diseñado para gestionar vistas basadas en datos en tiempo real, optimizando la experiencia del usuario.
+      </p>
+    
+      <h3 class="subtitle">¿Qué aplicaciones tiene?</h3>
+      <p class="description">
+        Angular se utiliza en una variedad de contextos, como:
+      </p>
+      <ul class="feature-list">
+        <li>Aplicaciones de una sola página (SPA, Single Page Applications).</li>
+        <li>Sistemas empresariales complejos como CRMs y ERPs.</li>
+        <li>Aplicaciones móviles híbridas mediante frameworks como Ionic.</li>
+        <li>Paneles de administración y sistemas de análisis de datos.</li>
+      </ul>
+    
+      <h3 class="subtitle">¿Sobre qué lenguajes se apoya?</h3>
+      <p class="description">
+        Angular utiliza principalmente <strong>TypeScript</strong>, un superconjunto de JavaScript que mejora la productividad 
+        y el mantenimiento del código. También emplea:
+      </p>
+      <ul class="feature-list">
+        <li><strong>HTML</strong> para las vistas y estructura del contenido.</li>
+        <li><strong>CSS o SCSS</strong> para los estilos.</li>
+      </ul>
+    
+      <h3 class="subtitle">¿Qué prerrequisitos necesita?</h3>
+      <p class="description">
+        Para comenzar con Angular, necesitas conocimientos básicos de:
+      </p>
+      <ul class="feature-list">
+        <li><strong>JavaScript</strong>: Lenguaje base para comprender la lógica de Angular.</li>
+        <li><strong>HTML</strong>: Para estructurar las vistas.</li>
+        <li><strong>CSS</strong>: Para estilizar los componentes.</li>
+        <li><strong>TypeScript</strong>: No es obligatorio, pero es recomendable para sacar el máximo partido a Angular.</li>
+      </ul>
+    </div>
+    <div *ngSwitchCase="'instalacion'">
+      <h2 class="title">Instalación de Angular</h2>
+  
+    <h3 class="subtitle">¿Se precisa instalación?</h3>
+    <p class="description">
+      Sí, Angular requiere la instalación de herramientas específicas para crear y ejecutar proyectos. Esto incluye 
+      Node.js y Angular CLI, que son esenciales para desarrollar con este framework.
+    </p>
+  
+    <h3 class="subtitle">¿Qué pasos hay que realizar para realizar la instalación?</h3>
+    <p class="description">
+      Sigue estos pasos para instalar Angular:
+    </p>
+    <ol class="step-list">
+      <li>Instala <strong>Node.js</strong> desde <a href="https://nodejs.org" target="_blank">nodejs.org</a>.</li>
+      <li>Verifica que Node.js y npm están instalados ejecutando <code>node -v</code> y <code>npm -v</code> en una terminal.</li>
+      <li>Instala <strong>Angular CLI</strong> globalmente con el siguiente comando:
+        <pre><code>npm install -g &#64;/cli</code></pre>
+      </li>
+      <li>Verifica la instalación de Angular CLI ejecutando:
+        <pre><code>ng version</code></pre>
+      </li>
+    </ol>
+  
+    <h3 class="subtitle">¿Versiones necesarias?</h3>
+    <p class="description">
+      Las versiones recomendadas son:
+    </p>
+    <ul class="feature-list">
+      <li><strong>Node.js:</strong> Versión 14.x o superior (preferiblemente LTS).</li>
+      <li><strong>Angular CLI:</strong> Versión más reciente, obtenida al instalar mediante npm.</li>
+    </ul>
+  
+    <h3 class="subtitle">¿Rutas para tener en cuenta?</h3>
+    <p class="description">
+      Angular CLI instala herramientas globalmente en el sistema. Asegúrate de que la ruta de Node.js y npm 
+      esté configurada correctamente en tu entorno:
+    </p>
+    <pre><code>echo $PATH</code></pre>
+  
+    <h3 class="subtitle">¿Variables de entorno?</h3>
+    <p class="description">
+      Por lo general, no necesitas configurar variables de entorno adicionales para trabajar con Angular. 
+      Sin embargo, verifica que Node.js y npm estén en el PATH de tu sistema para que puedas ejecutar comandos desde cualquier directorio.
+    </p>
+  
+    <h3 class="subtitle">¿Necesita base de datos?</h3>
+    <p class="description">
+      Angular no requiere una base de datos para funcionar, ya que es un framework frontend. Sin embargo, puede consumir 
+      APIs que interactúan con bases de datos. Por ejemplo, podrías usar servicios RESTful o GraphQL para conectar con una base de datos externa.
+    </p>
+  
+    <h3 class="subtitle">¿Hay herramientas opcionales útiles?</h3>
+    <p class="description">
+      Sí, algunas herramientas pueden facilitar el desarrollo:
+    </p>
+    <ul class="feature-list">
+      <li><strong>Visual Studio Code:</strong> Un editor de código ligero con soporte para Angular y TypeScript.</li>
+      <li><strong>Extensiones para VS Code:</strong> Angular Language Service para autocompletado y soporte de plantillas.</li>
+      <li><strong>Postman:</strong> Para probar y depurar APIs que tu aplicación Angular consuma.</li>
+    </ul>
+    </div>
+    <div *ngSwitchCase="'primeros-pasos'">
+      <h2 class="title">Primeros Pasos con Angular</h2>
+  
+    <h3 class="subtitle">¿Cómo realizar una primera aproximación ("Hola Mundo")?</h3>
+    <p class="description">
+      A continuación, se explican los pasos para crear un proyecto Angular y mostrar un mensaje "Hola Mundo" en la pantalla.
+    </p>
+  
+    <h4 class="step-title">1. Crear un nuevo proyecto Angular</h4>
+    <p class="description">
+      Abre una terminal y ejecuta el siguiente comando para crear un nuevo proyecto Angular:
+    </p>
+    <pre><code>ng new hola-mundo</code></pre>
+    <p class="description">
+      Angular CLI te pedirá algunas opciones sobre el proyecto. Puedes aceptar las predeterminadas presionando <strong>Enter</strong>.
+    </p>
+  
+    <h4 class="step-title">2. Navegar al directorio del proyecto</h4>
+    <p class="description">
+      Una vez creado el proyecto, navega al directorio del proyecto con el siguiente comando:
+    </p>
+    <pre><code>cd hola-mundo</code></pre>
+  
+    <h4 class="step-title">3. Ejecutar el servidor de desarrollo</h4>
+    <p class="description">
+      Inicia el servidor de desarrollo para visualizar la aplicación ejecutando:
+    </p>
+    <pre><code>ng serve --open</code></pre>
+    <p class="description">
+      Esto abrirá tu navegador en la dirección <a href="http://localhost:4200" target="_blank">http://localhost:4200</a>, donde verás la página predeterminada de Angular.
+    </p>
+  
+    <h4 class="step-title">4. Modificar el componente principal</h4>
+    <p class="description">
+      Abre el archivo <code>src/app/app.component.html</code> en tu editor de código. Este archivo controla la vista principal de la aplicación.
+      Reemplaza su contenido con el siguiente código:
+    </p>
+    <pre><code>&lt;h1&gt;¡Hola Mundo desde Angular!&lt;/h1&gt;</code></pre>
+  
+    <h4 class="step-title">5. Guardar y visualizar</h4>
+    <p class="description">
+      Guarda los cambios y actualiza el navegador (si no se actualiza automáticamente). Verás el mensaje "¡Hola Mundo desde Angular!" en pantalla.
+    </p>
+  
+    <h4 class="step-title">¡Enhorabuena!</h4>
+    <p class="description">
+      Has creado tu primer proyecto Angular y mostrado un mensaje en pantalla. Ahora estás listo para explorar más funciones de Angular.
+    </p>
+    </div>
+    <div *ngSwitchCase="'utilizacion'">
+      <h2 class="title">Utilización del Framework Angular</h2>
+  
+      <h3 class="subtitle">¿Cómo empezar a crear una aplicación base?</h3>
+      <p class="description">
+        Para comenzar a crear una aplicación base en Angular, sigue estos pasos:
+      </p>
+      <ol class="step-list">
+        <li>
+          Abre una terminal y ejecuta el siguiente comando para crear un nuevo proyecto:
+          <pre><code>ng new mi-aplicacion</code></pre>
+          Este comando genera un espacio de trabajo con una estructura inicial.
+        </li>
+        <li>
+          Responde a las preguntas que se muestran en la terminal:
+          <ul class="feature-list">
+            <li><strong>¿Quieres agregar enrutamiento?</strong> (Responde "Sí" si necesitas navegación entre páginas).</li>
+            <li><strong>¿Qué formato de estilos deseas usar?</strong> (Elige entre CSS, SCSS, o LESS).</li>
+          </ul>
+        </li>
+        <li>
+          Navega al directorio del proyecto con:
+          <pre><code>cd mi-aplicacion</code></pre>
+        </li>
+        <li>
+          Inicia el servidor de desarrollo ejecutando:
+          <pre><code>ng serve</code></pre>
+        </li>
+      </ol>
+    
+      <h3 class="subtitle">¿Cómo visualizar los resultados de la ejecución?</h3>
+      <p class="description">
+        Una vez que ejecutas <code>ng serve</code>, el servidor local iniciará en el puerto predeterminado. Para visualizar los resultados:
+      </p>
+      <ol class="step-list">
+        <li>
+          Abre tu navegador web y navega a:
+          <a href="http://localhost:4200" target="_blank">http://localhost:4200</a>.
+        </li>
+        <li>
+          Verás una página de bienvenida generada automáticamente por Angular. Esto confirma que tu aplicación se ejecuta correctamente.
+        </li>
+        <li>
+          Para personalizar la página, edita el archivo:
+          <pre><code>src/app/app.component.html</code></pre>
+          Por ejemplo, reemplaza su contenido con:
+          <pre><code>&lt;h1&gt;¡Hola Mundo desde Mi Aplicación Angular!&lt;/h1&gt;</code></pre>
+        </li>
+        <li>
+          Guarda los cambios. Si el servidor está corriendo, los resultados se actualizarán automáticamente en el navegador gracias a la recarga en vivo.
+        </li>
+      </ol>
+    </div>
+    <div *ngSwitchCase="'explicacion'">
+      <h1>Explicación del Funcionamiento del Framework</h1>
+      
+      <h2>¿Actúa sobre páginas, ficheros, secciones…?</h2>
+      <p>
+        Angular organiza el contenido en una estructura jerárquica basada en:
+      </p>
+      <ul>
+        <li><strong>Componentes:</strong> Controlan una sección de la interfaz de usuario (UI).</li>
+        <li><strong>Módulos:</strong> Agrupan componentes relacionados.</li>
+        <li><strong>Servicios:</strong> Gestionan lógica y datos compartidos entre componentes.</li>
+      </ul>
+      <p>
+        Angular permite construir aplicaciones de una sola página (SPA), donde el contenido cambia dinámicamente 
+        sin necesidad de recargar toda la página.
+      </p>
+    
+      <h2>¿Cómo se editan/modifican los ficheros que actúan en el framework?</h2>
+      <p>
+        Cada componente de Angular tiene tres archivos principales:
+      </p>
+      <ul>
+        <li><strong>HTML:</strong> Define la estructura de la interfaz (por ejemplo, botones, tablas, formularios).</li>
+        <li><strong>CSS:</strong> Agrega estilos y diseño visual a la interfaz.</li>
+        <li><strong>TypeScript:</strong> Contiene la lógica y funcionalidad del componente.</li>
+      </ul>
+      <p>
+        Para modificar un componente, simplemente edita estos archivos en tu editor de texto o IDE, como Visual Studio Code. 
+        Angular recargará automáticamente los cambios si el servidor de desarrollo está corriendo.
+      </p>
+    
+      <h2>¿Cómo se referencian los ficheros creados desde otras aplicaciones (si es el caso)?</h2>
+      <p>
+        Para referenciar ficheros creados en Angular desde otras aplicaciones o proyectos:
+      </p>
+      <ol>
+        <li>
+          <strong>Exporta el componente o módulo:</strong> Asegúrate de que el componente esté exportado 
+          desde su módulo correspondiente.
+        </li>
+        <li>
+          <strong>Compártelo como una librería:</strong> Angular permite empaquetar componentes en 
+          librerías reutilizables que puedes publicar en un repositorio como NPM.
+        </li>
+        <li>
+          <strong>Usa el selector del componente:</strong> En un proyecto Angular, los componentes pueden 
+          ser referenciados directamente en el HTML mediante su selector (por ejemplo, <code>&lt;app-my-component&gt;&lt;/app-my-component&gt;</code>).
+        </li>
+      </ol>
+      <p>
+        Si necesitas integrar Angular con aplicaciones externas (no Angular), puedes exportar los elementos 
+        como un paquete JavaScript o incrustar las vistas Angular dentro de un iframe.
+      </p>
+    </div>
+    
+    <div *ngSwitchCase="'conclusiones'">
+      <h2 class="title">Conclusiones del Tutorial</h2>
+
+  <h3 class="subtitle">Alcance del Tutorial</h3>
+  <p class="description">
+    Este tutorial ha proporcionado una introducción completa a Angular, desde la instalación y configuración inicial, 
+    hasta la creación y ejecución de aplicaciones base. Los temas tratados permiten a los desarrolladores entender 
+    los conceptos fundamentales del framework y comenzar a trabajar en proyectos frontend modernos y escalables.
+  </p>
+  <p class="description">
+    Además, hemos explorado cómo Angular facilita el desarrollo a través de su arquitectura basada en componentes, 
+    herramientas CLI, y soporte para consumo de APIs, navegación, y estilos modulares. Este conocimiento sienta 
+    las bases para abordar proyectos más avanzados con confianza.
+  </p>
+
+  <h3 class="subtitle">Objetivos Conseguidos</h3>
+  <ul class="feature-list">
+    <li>Comprender qué es Angular y para qué sirve.</li>
+    <li>Instalar y configurar Angular en un entorno local.</li>
+    <li>Crear un proyecto base con Angular y personalizarlo.</li>
+    <li>Entender la estructura de un proyecto Angular y cómo modificar componentes, vistas y estilos.</li>
+    <li>Conocer el funcionamiento del framework y cómo interactúa con otros sistemas mediante servicios y APIs.</li>
+    <li>Sentar las bases para desarrollar aplicaciones web modernas, eficientes y escalables.</li>
+  </ul>
+
+  <h3 class="subtitle">Reflexión Final</h3>
+  <p class="description">
+    Angular es una herramienta poderosa que combina flexibilidad, eficiencia y una curva de aprendizaje desafiante, 
+    pero gratificante. Este tutorial es solo el comienzo; al profundizar en conceptos como servicios avanzados, 
+    directivas personalizadas y optimización de rendimiento, los desarrolladores pueden aprovechar al máximo 
+    el potencial de Angular.
+  </p>
+  <p class="description">
+    El camino hacia el dominio de Angular implica práctica constante y exploración de sus amplias funcionalidades. 
+    ¡Ahora tienes las herramientas necesarias para comenzar tu viaje como desarrollador Angular!
+  </p>
+    </div>
+    <div *ngSwitchDefault>
+      <h1>Bienvenido</h1>
+      <p>Selecciona una sección del menú para aprender sobre Angular.</p>
+      <p>Diego Díaz Sánchez Actividad 2</p>
+    </div>
+  </ng-container>
+</div>
